@@ -16,6 +16,22 @@ function checkLine(station) {
   return line;
 }
 
+function calcStops(startORend, line) {
+  var lineStops = [];
+  if (line.indexOf(startORend) < line.indexOf("Richmond")) {
+    lineStops = line.slice(line.indexOf(startORend), line.indexOf("Richmond") + 1);
+  }
+  else {
+    lineStops = line.slice(line.indexOf("Richmond"), line.indexOf(startORend) + 1);
+  }
+  return lineStops;
+}
+
+function removeDuplicateUsingSet(arr) {
+  var unique_array = Array.from(new Set(arr))
+  return unique_array
+}
+
 function lineDetails(startStop, endStop) {
   line1 = checkLine(startStop);
   line2 = checkLine(endStop);
@@ -34,25 +50,22 @@ function lineDetails(startStop, endStop) {
   }
   else {
     if (line1.indexOf(startStop) < line1.indexOf("Richmond") && (line2.indexOf(endStop) < line2.indexOf("Richmond"))) {
-      line1Stops = line1.slice(line1.indexOf(startStop), line1.indexOf("Richmond") + 1);
-      line2Stops = line2.slice(line2.indexOf(endStop), line2.indexOf("Richmond")).reverse();
-      newTrip = line1Stops.concat(line2Stops);
+      line1Stops = calcStops(startStop, line1);
+      line2Stops = calcStops(endStop, line2).reverse();
     }
     else if ((line1.indexOf(startStop) > line1.indexOf("Richmond")) && (line2.indexOf(endStop) > line2.indexOf("Richmond"))) {
-      line1Stops = line1.slice(line1.indexOf("Richmond"), line1.indexOf(startStop) + 1).reverse();
-      line2Stops = line2.slice(line2.indexOf("Richmond") + 1, line2.indexOf(endStop) + 1);
-      newTrip = line1Stops.concat(line2Stops);
+      line1Stops = calcStops(startStop, line1).reverse();
+      line2Stops = calcStops(endStop, line2);
     }
     else if ((line1.indexOf(startStop) < line1.indexOf("Richmond")) && (line2.indexOf(endStop) > line2.indexOf("Richmond"))) {
-      line1Stops = line1.slice(line1.indexOf(startStop), line1.indexOf("Richmond"));
-      line2Stops = line2.slice(line2.indexOf("Richmond"), line2.indexOf(endStop) + 1);
-      newTrip = line1Stops.concat(line2Stops);
+      line1Stops = calcStops(startStop, line1);
+      line2Stops = calcStops(endStop, line2);
     }
     else {
-      line1Stops = line1.slice(line1.indexOf("Richmond"), line1.indexOf(startStop) + 1).reverse();
-      line2Stops = line2.slice(line2.indexOf(endStop), line2.indexOf("Richmond")).reverse();
-      newTrip = line1Stops.concat(line2Stops);
+      line1Stops = calcStops(startStop, line1).reverse();
+      line2Stops = calcStops(endStop, line2);
     }
+    newTrip = removeDuplicateUsingSet(line1Stops.concat(line2Stops));
   }
 
   tripInfo = {
@@ -79,8 +92,8 @@ function tripPlanner(origin, destination) {
 
 function display(startStation, endStation) {
   var showResult = tripPlanner(startStation, endStation);
-  console.log("origin: "+ showResult.from);
-  console.log("destination: "+ showResult.to);
+  console.log("origin: " + showResult.from);
+  console.log("destination: " + showResult.to);
   console.log("\n");
   console.log(showResult.tripInfo);
 }

@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box; 
+}
+
+.head{
+  display: flex;
+  width: 80%;
+  margin-bottom: 100px;
+}
+
+.logo{
+  background-color: red;
+  border:1px solid black;
+  width:200px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+.head h1{
+  margin: 0 auto;
+}
+.account{
+  display: flex;
+  width: 80%;
+}
+.savings{
+  background-color: gray ;
+  border:1px solid black;
+  width:200px;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.checking{
+  background-color: gray ;
+  border:1px solid black;
+  width:200px;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.savings p, .checking p{
+  font-size: 12px;
+}
+
+.savings_btns, .checking_btns, .input_savings, .input_checking{
+  margin-top: 10px;
+}

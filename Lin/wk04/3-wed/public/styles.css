@@ -1,0 +1,28 @@
+h3{
+  color:grey;
+}
+p{
+  font-size:16px;
+  color: black;
+}
+ul{
+  list-style: none;
+  display: table;
+  font-size:16px;
+}
+li{
+  margin: 10px 0;
+  vertical-align: middle;
+  display: table-cell;
+}
+div {
+  width: 50%;
+  height: 30%;
+}
+span{
+  width:  100px;
+  margin-right: 50px;
+}
+footer{
+  margin-top: 50px;
+}

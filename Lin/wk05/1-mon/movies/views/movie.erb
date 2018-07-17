@@ -1,0 +1,15 @@
+ <% if @movie_response == "True" %>
+  <h1><%=@movie_title%>  (<%=@movie_year%>)</h1>
+  <% if @movies_poster != "N/A" %>
+  <div class="subject">
+    <div class="poster">
+      <img src="<%=@movies_poster%>" alt="poster">
+    </div>
+    <div class="info">
+      <span><span class="pl">Director</span>: <span class="attrs"><%=@movies_director%></span></span>
+    </div>
+  </div>
+  <% end %>
+<% else %>
+  <h1>Could not find this movie!</h1>
+<% end %>

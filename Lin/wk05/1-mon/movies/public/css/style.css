@@ -1,0 +1,33 @@
+.nav{
+  display: flex;
+  width: 8%;
+}
+
+.home{
+  flex:1;
+}
+.about{
+  flex:1;
+}
+
+body {
+  background-color: blanchedalmond;
+}
+
+h1 {
+  font-size: 40px;
+  color: lightpink;
+}
+
+.poster{
+  float: left;
+  text-align: center;
+  margin: 3px 12px 0 0;
+  /* max-width: 155px; */
+  overflow: hidden;
+}
+
+.info{
+  float: left;
+  word-wrap: break-word;
+}

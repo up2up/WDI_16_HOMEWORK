@@ -1,13 +1,19 @@
 .nav{
   display: flex;
-  width: 8%;
+  width: 10%;
 }
 
 .home{
   flex:1;
+  margin-right: 10px;
 }
 .about{
   flex:1;
+  margin-right: 10px;
+}
+.history{
+  flex:1;
+  margin-right: 10px;
 }
 
 body {
@@ -17,6 +23,12 @@ body {
 h1 {
   font-size: 40px;
   color: lightpink;
+  text-align: center;
+}
+
+h3 {
+  font-size: 30px;
+  color: grey;
 }
 
 .poster{
@@ -30,4 +42,28 @@ h1 {
 .info{
   float: left;
   word-wrap: break-word;
+  color: grey;
+  font-size:18px;
+}
+
+.search{
+  text-align: center;
+  margin-top: 150px;
+}
+.search_form{
+  margin-top: 30px;
+}
+input {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+button{
+  background-color: #e7e7e7; color: rgb(53, 52, 52);
+  font-size: 20px;
+  margin-left: 20px;
+  width: 10%;
+  border-radius: 8px;
 }

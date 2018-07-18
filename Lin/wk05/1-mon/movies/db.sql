@@ -1,0 +1,21 @@
+CREATE TABLE movies (
+  imdbID varchar(100) PRIMARY KEY,
+  title varchar(400),
+  year varchar(100),
+  rated varchar(100),
+  released varchar(100),
+  genre varchar(100),
+  director varchar(100),
+  writer varchar(100),
+  actors varchar(400),
+  plot varchar(400),
+  language varchar(100),
+  country varchar(100),
+  awards varchar(100),
+  poster varchar(400),
+  ratings text,
+  metascore INTEGER,
+  imdbRating DECIMAL(2,1),
+  imdbVotes INTEGER,
+  type varchar(100)
+);

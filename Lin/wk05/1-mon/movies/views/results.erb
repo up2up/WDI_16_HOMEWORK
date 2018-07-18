@@ -1,4 +1,10 @@
-<h3> <%=@results['totalResults'].to_i%> movies are found!</h3>
-<% @movies.each do |movie|%>
-<p><a href="/movies/<%=movie['Title']%>"><%=movie['Title']%> (<%=movie['Year']%>)</a></p>
+<% if @results["Response"] == "True" %>
+    <h3> <%=@results['totalResults'].to_i%> movies are found!</h3>
+    <% @movies.each do |movie|%>
+        <p><a href="/movies/<%=movie['imdbID']%>"><%=movie['Title']%> (<%=movie['Year']%>)</a></p>
+    <% end %>
+<% else %>
+    <h1>Could not find this movie!</h1>
 <% end %>
+
+

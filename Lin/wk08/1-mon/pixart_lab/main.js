@@ -11,7 +11,8 @@ const enterKey = event => {
 }
 
 const changeColor = event => {
-  $(event.target).css('background', 'green');
+  const userInputColor = $('.selected_color').css('backgroundColor');
+  $(event.target).css('background', userInputColor);
 }
 
 

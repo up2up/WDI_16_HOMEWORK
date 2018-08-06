@@ -1,7 +1,7 @@
 const setColor = event => {
   event.preventDefault();
   const form_data = $('form').serialize().replace("color=", "");
-  $('.selected_color').css("background", form_data);
+  $('.selected_color').css("background-color", form_data);
 }
 
 const enterKey = event => {
@@ -11,8 +11,11 @@ const enterKey = event => {
 }
 
 const changeColor = event => {
-  const userInputColor = $('.selected_color').css('backgroundColor');
-  $(event.target).css('background', userInputColor);
+  event.stopPropagation();
+  if ($(event.target).attr('class') === 'square') {
+    const userInputColor = $('.selected_color').css('backgroundColor');
+    $(event.target).css('background-color', userInputColor);
+  }
 }
 
 

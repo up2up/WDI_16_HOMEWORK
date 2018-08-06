@@ -37,5 +37,5 @@ $(document).ready(function () {
   $('#color_selector_form').submit(setColor);
   $('#color_selector_form').bind("enterKey", setColor);
   $('#color_selector_form').keyup(enterKey);
-  $(allDivs).click(changeColor);
+  $(allDivs).mouseover(changeColor);
 });

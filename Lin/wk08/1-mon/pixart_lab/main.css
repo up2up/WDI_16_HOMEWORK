@@ -1,0 +1,9 @@
+.color_selector{
+  display: flex;
+}
+.selected_color{
+  width: 15px;
+  height:15px;
+  border: solid 1px black;
+  margin-left: 10px;
+}

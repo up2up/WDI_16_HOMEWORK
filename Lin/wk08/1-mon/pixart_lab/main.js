@@ -12,7 +12,7 @@ const enterKey = event => {
 
 const changeColor = event => {
   event.stopPropagation();
-  if ($(event.target).attr('class') === 'square') {
+  if ($(event.target).attr('class') === 'square'){
     const userInputColor = $('.selected_color').css('backgroundColor');
     $(event.target).css('background-color', userInputColor);
   }
@@ -22,6 +22,13 @@ const changeColor = event => {
 $(document).ready(function () {
   const allDivs = $('<div/>', {
     'class': 'all_squares',
+    css:{
+      'display': 'grid',
+      'grid-template-columns': 'repeat(30, 1fr)',
+      'grid-gap': '5px'
+    }
+  
+  
   });
 
   for (var i = 1; i <= 1000; i++) {

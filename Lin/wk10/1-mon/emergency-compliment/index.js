@@ -27,13 +27,13 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/*/', (req, res) => {
+app.get('/:name', (req, res) => {
   res.render('index',
     {
       compliments: _.sample(compliments),
       backgroundColor: _.sample(colors),
-      person: `Hello ${req.path.replace('\/', '')}`
-    })
+      // person: `Hello ${req.path.replace('\/', '')}`
+      person: `Hello ${req.params.name}`})
 })
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
